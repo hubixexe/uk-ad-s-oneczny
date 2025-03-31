@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Układ Słoneczny</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Witaj w Układzie Słonecznym!</h1>
+    <p>Przedstawię wam informację o planetach i innych działach niebieskich</p>
+    <p>Praca Huberta Szymańskiego z SP14 z klasy 8c</p>
+</body>
+<h2>Kliknij na planetę, aby zobaczyć informacje</h2>
+<div class="solar-system">
+    <img src="images/merkury.jpg" class="planet" id="merkury" alt="Merkury">
+    <img src="images/wenus.jpg" class="planet" id="wenus" alt="Wenus">
+    <img src="images/ziemia.jpg" class="planet" id="ziemia" alt="Ziemia">
+    <img src="images/mars.jpg" class="planet" id="mars" alt="Mars">
+    <img src="images/jowisz.jpg" class="planet" id="jowisz" alt="Jowisz">
+    <img src="images/saturn.jpg" class="planet" id="saturn" alt="Saturn">
+    <img src="images/uran.jpg" class="planet" id="uran" alt="Uran">
+    <img src="images/neptun.jpg" class="planet" id="neptun" alt="Neptun">
+</div>
+<div id="info"></div>
+<script src="script.js"></script>
+<body></body>
+</html>
+/* Tło strony */
+body {
+    background-image: url('images/space-background.jpg'); /* Zmienna ścieżka do pliku tła */
+    background-size: cover; /* Dopasowanie tła do całej strony */
+    background-position: center;
+    color: white; /* Biały tekst, żeby był czytelny na ciemnym tle */
+    font-family: Arial, sans-serif; /* Zmieniamy czcionkę */
+    text-align: center;
+}
+
+h1, p {
+    font-family: 'Arial', sans-serif;
+}
+
+h2 {
+    margin-top: 30px;
+    font-size: 1.5em;
+}
+
+
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Układ Słoneczny</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Witaj w Układzie Słonecznym!</h1>
+    <p>Przedstawię wam informację o planetach i innych działach niebieskich</p>
+    <p>Praca Huberta Szymańskiego z SP14 z klasy 8c</p>
+
+    <h2>Kliknij na nazwę planety, aby zobaczyć jej zdjęcie</h2>
+    <div class="planets-info">
+        <div class="planet" id="merkury" onclick="pokazObraz('merkury')">
+            <p>Merkury - Najbliższa planeta Słońca.</p>
+        </div>
+        <div class="planet" id="wenus" onclick="pokazObraz('wenus')">
+            <p>Wenus - Druga planeta od Słońca.</p>
+        </div>
+        <div class="planet" id="ziemia" onclick="pokazObraz('ziemia')">
+            <p>Ziemia - Nasza planeta, jedyna z życiem.</p>
+        </div>
+        <div class="planet" id="mars" onclick="pokazObraz('mars')">
+            <p>Mars - Czerwona planeta.</p>
+        </div>
+        <div class="planet" id="jowisz" onclick="pokazObraz('jowisz')">
+            <p>Jowisz - Największa planeta w Układzie Słonecznym.</p>
+        </div>
+        <div class="planet" id="saturn" onclick="pokazObraz('saturn')">
+            <p>Saturn - Znany ze swoich pierścieni.</p>
+        </div>
+        <div class="planet" id="uran" onclick="pokazObraz('uran')">
+            <p>Uran - Planeta na boku.</p>
+        </div>
+        <div class="planet" id="neptun" onclick="pokazObraz('neptun')">
+            <p>Neptun - Niebieska planeta.</p>
+        </div>
+    </div>
+
+    <div id="planet-image" style="display: none; margin-top: 30px;">
+        <img id="planet-img" src="" alt="Planet Image" />
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+    <div id="planet-image" style="display: none; margin-top: 30px;">
+        <img id="planet-img" src="" alt="Planet Image" />
+    </div>
+
+    <!-- Przycisk, który przekierowuje do gry w Scratchu -->
+    <div style="margin-top: 30px;">
+        <button onclick="przejdzDoGry()" style="padding: 10px 20px; font-size: 16px; cursor: pointer; background-color: #4CAF50; color: white; border: none; border-radius: 5px;">
+            Zagraj w grę o Układzie Słonecznym!
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+    <!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Układ Słoneczny</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Witaj w Układzie Słonecznym!</h1>
+    <p>Przedstawię wam informację o planetach i innych działach niebieskich</p>
+    <p>Praca Huberta Szymańskiego z SP14 z klasy 8c</p>
+
+    <h2>Kliknij na nazwę planety, aby zobaczyć informację o niej</h2>
+
+    <div class="planets-info">
+        <div class="planet" id="merkury" onclick="pokazObraz('merkury')">
+            <p>Merkury - Najbliższa planeta Słońca.</p>
+            <button class="show-details" onclick="pokazSzczegoly('merkury')">Pokaż szczegóły</button>
+            <div id="merkury-info" class="planet-info" style="display: none;">
+                <p>Merkury jest najmniejszą planetą Układu Słonecznego i najbliższą Słońcu. Ma bardzo cienką atmosferę, która nie zatrzymuje ciepła, dlatego różnica temperatury między dniem a nocą jest ogromna.</p>
+            </div>
+        </div>
+
+        <div class="planet" id="wenus" onclick="pokazObraz('wenus')">
+            <p>Wenus - Druga planeta od Słońca.</p>
+            <button class="show-details" onclick="pokazSzczegoly('wenus')">Pokaż szczegóły</button>
+            <div id="wenus-info" class="planet-info" style="display: none;">
+                <p>Wenus to druga planeta od Słońca. Znana jest ze swojego żółtego koloru, spowodowanego grubą atmosferą. Ciepło na Wenus jest najsilniejsze ze wszystkich planet, a ciśnienie na powierzchni jest około 90 razy większe niż na Ziemi.</p>
+            </div>
+        </div>
+
+        <div class="planet" id="ziemia" onclick="pokazObraz('ziemia')">
+            <p>Ziemia - Nasza planeta, jedyna z życiem.</p>
+            <button class="show-details" onclick="pokazSzczegoly('ziemia')">Pokaż szczegóły</button>
+            <div id="ziemia-info" class="planet-info" style="display: none;">
+                <p>Ziemia jest jedyną planetą, na której obecnie znane jest życie. Ma atmosferę, która pozwala na istnienie wody w stanie ciekłym oraz ma jeden naturalny satelita - Księżyc.</p>
+            </div>
+        </div>
+
+        <!-- Dodaj inne planety w podobny sposób -->
+
+    </div>
+
+    <div id="planet-image" style="display: none; margin-top: 30px;">
+        <img id="planet-img" src="" alt="Planet Image" />
+    </div>
+
+    <div style="margin-top: 30px;">
+        <button onclick="przejdzDoGry()" style="padding: 10px 20px; font-size: 16px; cursor: pointer; background-color: #4CAF50; color: white; border: none; border-radius: 5px;">
+            Zagraj w grę w Scratchu!
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Układ Słoneczny</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Witaj w Układzie Słonecznym!</h1>
+    <p>Przedstawię wam informację o planetach i innych działach niebieskich</p>
+    <p>Praca Huberta Szymańskiego z SP14 z klasy 8c</p>
+
+    <h2>Kliknij na nazwę planety, aby zobaczyć informację o niej</h2>
+
+    <div class="planets-info">
+        <div class="planet" id="merkury" onclick="pokazObraz('merkury')">
+            <p>Merkury - Najbliższa planeta Słońca.</p>
+            <button class="show-details" onclick="pokazSzczegoly('merkury')">Pokaż szczegóły</button>
+            <div id="merkury-info" class="planet-info" style="display: none;">
+                <p>Merkury jest najmniejszą planetą Układu Słonecznego i najbliższą Słońcu. Ma bardzo cienką atmosferę, która nie zatrzymuje ciepła, dlatego różnica temperatury między dniem a nocą jest ogromna.</p>
+            </div>
+        </div>
+
+        <div class="planet" id="wenus" onclick="pokazObraz('wenus')">
+            <p>Wenus - Druga planeta od Słońca.</p>
+            <button class="show-details" onclick="pokazSzczegoly('wenus')">Pokaż szczegóły</button>
+            <div id="wenus-info" class="planet-info" style="display: none;">
+                <p>Wenus to druga planeta od Słońca. Znana jest ze swojego żółtego koloru, spowodowanego grubą atmosferą. Ciepło na Wenus jest najsilniejsze ze wszystkich planet, a ciśnienie na powierzchni jest około 90 razy większe niż na Ziemi.</p>
+            </div>
+        </div>
+
+        <div class="planet" id="ziemia" onclick="pokazObraz('ziemia')">
+            <p>Ziemia - Nasza planeta, jedyna z życiem.</p>
+            <button class="show-details" onclick="pokazSzczegoly('ziemia')">Pokaż szczegóły</button>
+            <div id="ziemia-info" class="planet-info" style="display: none;">
+                <p>Ziemia jest jedyną planetą, na której obecnie znane jest życie. Ma atmosferę, która pozwala na istnienie wody w stanie ciekłym oraz ma jeden naturalny satelita - Księżyc.</p>
+            </div>
+        </div>
+
+        <div class="planet" id="mars" onclick="pokazObraz('mars')">
+            <p>Mars - Czerwona planeta.</p>
+            <button class="show-details" onclick="pokazSzczegoly('mars')">Pokaż szczegóły</button>
+            <div id="mars-info" class="planet-info" style="display: none;">
+                <p>Mars to czerwona planeta, nazywana Czerwoną Planetą z powodu wysokiej zawartości tlenku żelaza w glebie. Jest czwórką planetą od Słońca i ma dwa małe księżyce.</p>
+            </div>
+        </div>
+
+        <div class="planet" id="jowisz" onclick="pokazObraz('jowisz')">
+            <p>Jowisz - Największa planeta Układu Słonecznego.</p>
+            <button class="show-details" onclick="pokazSzczegoly('jowisz')">Pokaż szczegóły</button>
+            <div id="jowisz-info" class="planet-info" style="display: none;">
+                <p>Jowisz to największa planeta w Układzie Słonecznym. Ma ogromną atmosferę składającą się głównie z wodoru i helu. Jest znany ze swojej Wielkiej Czerwonej Plamy – ogromnego cyklonu.</p>
+            </div>
+        </div>
+
+        <div class="planet" id="saturn" onclick="pokazObraz('saturn')">
+            <p>Saturn - Planeta z pierścieniami.</p>
+            <button class="show-details" onclick="pokazSzczegoly('saturn')">Pokaż szczegóły</button>
+            <div id="saturn-info" class="planet-info" style="display: none;">
+                <p>Saturn jest znany z swoich spektakularnych pierścieni. Jest drugą co do wielkości planetą w Układzie Słonecznym i składa się głównie z wodoru i helu.</p>
+            </div>
+        </div>
+
+        <div class="planet" id="uran" onclick="pokazObraz('uran')">
+            <p>Uran - Planet o nietypowej osi obrotu.</p>
+            <button class="show-details" onclick="pokazSzczegoly('uran')">Pokaż szczegóły</button>
+            <div id="uran-info" class="planet-info" style="display: none;">
+                <p>Uran to planeta, która obraca się na boku, przez co jej oś obrotu jest prawie równoległa do orbity. Jest gazowym gigantem, głównie składającym się z wodoru, helu oraz metanu.</p>
+            </div>
+        </div>
+
+        <div class="planet" id="neptun" onclick="pokazObraz('neptun')">
+            <p>Neptun - Najbardziej oddalona planeta od Słońca.</p>
+            <button class="show-details" onclick="pokazSzczegoly('neptun')">Pokaż szczegóły</button>
+            <div id="neptun-info" class="planet-info" style="display: none;">
+                <p>Neptun jest najbardziej oddaloną planetą Układu Słonecznego. Jest gazowym gigantem, który posiada silne wiatry i burze. Atmosfera Neptuna zawiera głównie wodór, hel oraz metan.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="planet-image" style="display: none; margin-top: 30px;">
+        <img id="planet-img" src="" alt="Planet Image" />
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
