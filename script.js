@@ -10,28 +10,31 @@ document.addEventListener("DOMContentLoaded", function() {
         neptun: "Neptun - Najbardziej wietrzna planeta w Układzie Słonecznym."
     };
 
-    // Klikanie na planetę, by wyświetlić informacje
     document.querySelectorAll(".planet").forEach(planet => {
         planet.addEventListener("click", function() {
-            document.getElementById("info").innerText = planets[this.id];
-            pokazObraz(this.id);  // Dodajemy funkcję do zmiany obrazka przy kliknięciu
-            pokazSzczegoly(this.id);  // Pokazujemy szczegóły o planecie
+            const infoElement = document.getElementById("info");
+            if (infoElement) {
+                infoElement.innerText = planets[this.id];
+            } else {
+                console.error("Element o ID 'info' nie istnieje.");
+            }
         });
     });
 });
 
-// Funkcja zmieniająca obrazek planety
+// Funkcja, która zmienia obrazek planety
 function pokazObraz(planetName) {
-    console.log("Kliknięto planetę:", planetName); // Sprawdzenie, czy funkcja działa
-    let imageSrc = 'images/' + planetName + '.jpg';
+    let imageSrc = `images/${planetName}.jpg`;
     
-    let imgElement = document.getElementById('planet-img');
-    imgElement.src = imageSrc;
-    imgElement.onerror = function() {
-        console.log("Błąd ładowania obrazu:", imageSrc);
-    };
+    const planetImg = document.getElementById('planet-img');
+    const planetImageDiv = document.getElementById('planet-image');
 
-    document.getElementById('planet-image').style.display = 'block';
+    if (planetImg && planetImageDiv) {
+        planetImg.src = imageSrc;
+        planetImageDiv.style.display = 'block';
+    } else {
+        console.error("Nie znaleziono elementów 'planet-img' lub 'planet-image'.");
+    }
 }
 
 // Funkcja pokazująca szczegóły o planecie
