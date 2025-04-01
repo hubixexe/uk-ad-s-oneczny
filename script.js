@@ -10,100 +10,37 @@ document.addEventListener("DOMContentLoaded", function() {
         neptun: "Neptun - Najbardziej wietrzna planeta w Układzie Słonecznym."
     };
 
+    // Klikanie na planetę, by wyświetlić informacje
     document.querySelectorAll(".planet").forEach(planet => {
         planet.addEventListener("click", function() {
             document.getElementById("info").innerText = planets[this.id];
+            pokazObraz(this.id);  // Dodajemy funkcję do zmiany obrazka przy kliknięciu
+            pokazSzczegoly(this.id);  // Pokazujemy szczegóły o planecie
         });
     });
 });
-// Funkcja, która zmienia obrazek planety
-function pokazObraz(planetName) {
-    let imageSrc = '';
-    
-    // Sprawdzamy, która planeta została kliknięta i ustawiamy odpowiedni obrazek
-    switch(planetName) {
-        case 'merkury':
-            imageSrc = 'images/merkury.jpg';
-            break;
-        case 'wenus':
-            imageSrc = 'images/wenus.jpg';
-            break;
-        case 'ziemia':
-            imageSrc = 'images/ziemia.jpg';
-            break;
-        case 'mars':
-            imageSrc = 'images/mars.jpg';
-            break;
-        case 'jowisz':
-            imageSrc = 'images/jowisz.jpg';
-            break;
-        case 'saturn':
-            imageSrc = 'images/saturn.jpg';
-            break;
-        case 'uran':
-            imageSrc = 'images/uran.jpg';
-            break;
-        case 'neptun':
-            imageSrc = 'images/neptun.jpg';
-            break;
-        default:
-            imageSrc = '';
-    }
 
-    // Ustawiamy źródło obrazka i pokazujemy go
-    document.getElementById('planet-img').src = imageSrc;
-    document.getElementById('planet-image').style.display = 'block';
-}
-// Funkcja, która zmienia obrazek planety
+// Funkcja zmieniająca obrazek planety
 function pokazObraz(planetName) {
-    let imageSrc = '';
+    console.log("Kliknięto planetę:", planetName); // Sprawdzenie, czy funkcja działa
+    let imageSrc = 'images/' + planetName + '.jpg';
     
-    // Sprawdzamy, która planeta została kliknięta i ustawiamy odpowiedni obrazek
-    switch(planetName) {
-        case 'merkury':
-            imageSrc = 'images/merkury.jpg';
-            break;
-        case 'wenus':
-            imageSrc = 'images/wenus.jpg';
-            break;
-        case 'ziemia':
-            imageSrc = 'images/ziemia.jpg';
-            break;
-        case 'mars':
-            imageSrc = 'images/mars.jpg';
-            break;
-        case 'jowisz':
-            imageSrc = 'images/jowisz.jpg';
-            break;
-        case 'saturn':
-            imageSrc = 'images/saturn.jpg';
-            break;
-        case 'uran':
-            imageSrc = 'images/uran.jpg';
-            break;
-        case 'neptun':
-            imageSrc = 'images/neptun.jpg';
-            break;
-        default:
-            imageSrc = '';
-    }
+    let imgElement = document.getElementById('planet-img');
+    imgElement.src = imageSrc;
+    imgElement.onerror = function() {
+        console.log("Błąd ładowania obrazu:", imageSrc);
+    };
 
-    // Ustawiamy źródło obrazka i pokazujemy go
-    document.getElementById('planet-img').src = imageSrc;
     document.getElementById('planet-image').style.display = 'block';
 }
 
 // Funkcja pokazująca szczegóły o planecie
 function pokazSzczegoly(planetName) {
     const infoDiv = document.getElementById(planetName + '-info');
-    if (infoDiv.style.display === 'none') {
-        infoDiv.style.display = 'block';
+    if (infoDiv) {
+        infoDiv.style.display = (infoDiv.style.display === 'none') ? 'block' : 'none';
     } else {
-        infoDiv.style.display = 'none';
+        console.error(`Element o ID '${planetName}-info' nie istnieje.`);
     }
 }
-
-// Funkcja przekierowująca do gry w Scratchu
-function przejdzDoGry() {
-    window.location.href = 'https://scratch.mit.edu/projects/TWÓJ_ID_GRy';
-}
+console.log
