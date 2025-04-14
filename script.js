@@ -46,3 +46,4 @@ function pokazSzczegoly(planetName) {
         console.error(`Element o ID '${planetName}-info' nie istnieje.`);
     }
 }
+
